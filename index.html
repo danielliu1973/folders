@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"> 
+<html> 
+<head> 
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1"> 
+<title>Show Local Folder File List</title> 
+</head> 
+<body> 
+<div> 
+<script type="text/JScript"> 
+
+function ShowFolderFileList(folderspec){ 
+	var fso, f, fc, s; 
+	fso = new ActiveXObject("Scripting.FileSystemObject"); 
+	f = fso.GetFolder(folderspec); 
+	fc = new Enumerator(f.files); 
+	s = ""; 
+	for (; !fc.atEnd(); fc.moveNext()) { 
+		s += fc.item(); 
+		s += "<br>"; 
+	} 
+	return s; 
+} 
+
+// var fileList = ShowFolderFileList('C:\\fred'); 
+// document.write(fileList); 
+var a=a1=>b1=>c1=>a1+b1+c1;
+// console.log(a(5)(2)(4));
+
+var X = function(){
+  function A(){}
+  this.B = function(){console.log(this)}
+  return this;
+}
+X.prototype.C=function(){}
+var x1 = X();
+var x2 = new X();
+var x3 = X;
+console.log('---------------');
+console.log(x1);
+console.log('---------------');
+console.log(x2);
+console.log('---------------');
+console.log(x3);
+console.log('---------------');
+console.log(x1.B());
+console.log(B());
+console.log('---------------');
+console.log(x2.B());
+console.log('---------------');
+console.log(x3.B());
+console.log('---------------');
+
+</script> 
+</div> 
+</body> 
+</html>
+
